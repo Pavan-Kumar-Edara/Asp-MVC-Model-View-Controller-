@@ -1,0 +1,56 @@
+﻿@*@{
+    var toLogin = ViewData["toLogin"] as List<MVCFoodDelivery.Models.ToLogin>;
+}*@
+@*<h3>@ViewBag.title</h3>*@
+
+@*@{
+    var toLogin = ViewBag.ToLogin;
+}*@
+
+@Model MVCFoodDelivery.Models.ToLogin;
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var detail in toLogin)
+        {
+            <tr>
+                <td>@detail.Email</td>
+                <td>@detail.Password</td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            <tr>
+                <td>@Model.Email</td>
+                <td>@Model.Password</td>
+            </tr>
+        
+    </tbody>
+</table>
+
+
+<div>
+    @{
+        Html.RenderPartial("_address");
+    }
+</ div>
+
+<div>
+      @Html.Partial("_address")
+</ div>
